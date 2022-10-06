@@ -31,6 +31,26 @@
             \item [Apr. 2021] AuD starts - Jagr in heavy development
             \item [Aug. 2021] Redesigned internals for multiprocess capability
             \item [Oct. 2021] Jagr v0.1.0 released, submitter plugin introduced
+            \item [Nov. 2021 - Sep. 2022] Use and further development
+            \item [Oct. 2022] (Planned) rewrite v0.6
         \end{description}
+    \end{frame}
+
+    \section{The Grading Pipeline}
+    \begin{frame}
+        \slidehead
+        \vspace{1em}
+        \centering
+        \begin{tikzpicture}
+        % state 1
+        {
+            [start chain=1 going right, every join/.style={arc}]
+            \node<1->[flow, on chain=1,join](a){Submission};
+            \node<2->[flow, on chain=1,join](b){Automatic grading};
+            \node<3->[flow, on chain=1,join](c){Students feedback};
+            \node<4->[flow, on chain=1,join](e){Manual grading};
+        }
+            \draw<3->[arc, bend left] (c) to (b);
+        \end{tikzpicture}
     \end{frame}
 \end{document}

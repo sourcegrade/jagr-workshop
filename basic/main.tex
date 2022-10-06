@@ -41,16 +41,54 @@
         \slidehead
         \vspace{1em}
         \centering
-        \begin{tikzpicture}
-        % state 1
-        {
-            [start chain=1 going right, every join/.style={arc}]
+        \begin{tikzpicture}[start chain=1 going right, every join/.style={arc}]
             \node<1->[flow, on chain=1,join](a){Submission};
-            \node<2->[flow, on chain=1,join](b){Automatic grading};
-            \node<3->[flow, on chain=1,join](c){Students feedback};
-            \node<4->[flow, on chain=1,join](e){Manual grading};
-        }
+            \node<2->[flow, on chain=1,join](b){Automatic Grading};
+            \node<3->[flow, on chain=1,join](c){Student Feedback};
+            \node<4->[flow, on chain=1,join](e){Manual Grading};
             \draw<3->[arc, bend left] (c) to (b);
         \end{tikzpicture}
+    \end{frame}
+
+    \section{What does Jagr provide?}
+    \begin{frame}[c]
+        \slidehead
+        \centering
+        \begin{itemize}
+            \item \makebox[5cm][l]{Submission} \onslide<2->{\textbf{jagr-gradle}}
+            \item \makebox[5cm][l]{Automatic Grading} \onslide<3->{\textbf{jagr executable jar}}
+            \item \makebox[5cm][l]{Student Feedback} \onslide<4->{\textbf{moodle}}
+            \item \makebox[5cm][l]{Manual Grading} \onslide<5->{\textbf{jagr submission export}}
+        \end{itemize}
+    \end{frame}
+
+    \subsection{jagr-gradle}
+    \begin{frame}[c]
+        \slidehead
+        \centering
+        \vspace{-1em}
+        \large
+        \textbf{Gradle Tasks}
+        \vspace{2em}
+        \begin{itemize}[<+->]
+            \item build/\textbf{mainBuildSubmission}
+            \item build/\textbf{graderPublicBuildGrader}
+            \item build/\textbf{graderPublicBuildLibs}
+        \end{itemize}
+    \end{frame}
+
+    \subsection{jagr executable jar}
+    \begin{frame}[c]
+        \slidehead
+        \centering
+        \vspace{-1em}
+        \large
+        \textbf{CLI Arguments \& Flags}
+        \vspace{2em}
+        \begin{itemize}[<+->]
+            \item \textbf{--help}, -h
+            \item \textbf{--no-export}
+            \item \textbf{--export-only}
+        \end{itemize}
     \end{frame}
 \end{document}
